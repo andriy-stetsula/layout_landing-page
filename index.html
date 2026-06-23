@@ -5,35 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
     <link rel="stylesheet" href="src/styles/main.scss" />
-    <script src="src/scripts/main.js" defer></script>
+    <script src="main.js" defer></script>
   </head>
   <body>
 
     <input type="checkbox" id="menu-toggle"
      class="menu-toggle">
 
-    <header class="header">
+    <header class="header" id="home">
       <div class="logo">
-        <a href="#" class="a__link">
-          <div class="logo__actions">
-            <div class="logo__phone-box">
+        <div class="logo__actions">
+          <div class="logo__phone-box">
+            <a href="tel:+12125357710" class="logo__phone-link">
               <img src="/src/img/Icon-Phone-call.png" class="logo__phone"
-              alt="Icon-Phone-call">
-              <div class="logo__phone-tooltip">
-                <strong>THE MET FIFTH AVENUE</strong>
-                <span>+1 212-535-7710</span>
-                <strong>THE MET CLOISTERS</strong>
-                <span>+1 212-923-3700</span>
-              </div>
+                alt="Icon-Phone-call">
+            </a>
+            <div class="logo__phone-tooltip">
+              <strong>THE MET FIFTH AVENUE</strong>
+              <span>+1 212-535-7710</span>
+              <strong>THE MET CLOISTERS</strong>
+              <span>+1 212-923-3700</span>
             </div>
-            <label for="menu-toggle" class="logo__menu-label">
-              <img src="/src/img/Icon-Burger-menu.png" class="logo__menu"
-               alt="Icon-Burger-menu">
-            </label>
           </div>
-        </a>
+          <label for="menu-toggle" class="logo__menu-label">
+            <img src="/src/img/Icon-Burger-menu.png" class="logo__menu"
+              alt="Icon-Burger-menu">
+          </label>
+        </div>
         <img src="/src/img/THE MET.png" alt="The Met"
-         class="logo__brand">
+          class="logo__brand">
       </div>
     </header>
 
@@ -45,31 +45,32 @@
       </div>
 
       <ul class="sidebar__list">
-        <li><a href="#">home</a></li>
-        <li class="active"><a href="#">about us</a></li>
-        <li><a href="#">gallery</a></li>
-        <li><a href="#">explore online</a></li>
-        <li><a href="#">contacts</a></li>
+        <li><a href="#home">home</a></li>
+        <li class="active"><a href="#about">about us</a></li>
+        <li><a href="#gallery">gallery</a></li>
+        <li><a href="#gallery">explore online</a></li>
+        <li><a href="#contacts">contacts</a></li>
       </ul>
 
       <div class="sidebar__contacts">
         <p class="sidebar__contact-title">THE MET FIFTH AVANUE</p>
-        <p class="sidebar__contact-phone">+1 212-535-7710</p>
+        <a href="tel:+12125357710" class="sidebar__contact-phone">+1 212-535-7710</a>
 
         <p class="sidebar__contact-title">THE MET CLOISTERS</p>
-        <p class="sidebar__contact-phone">+1 212-923-3700</p>
+        <a href="tel:+12129233700" class="sidebar__contact-phone">+1 212-923-3700</a>
 
-        <a href="#" class="sidebar__order">CALL TO ORDER</a>
+        <a href="tel:+12125357710" class="sidebar__order">CALL TO ORDER</a>
       </div>
     </nav>
 
     <div class="container">
-      <img src="https://i.ibb.co/B5R89tGy/img-Photo.png" class="header__image"
-       alt="imgPhoto">
+      <img src="https://i.ibb.co/B5R89tGy/img-Photo.png"
+           class="header__image"
+           alt="imgPhoto">
       <div class="title"></div>
     </div>
 
-    <section class="section">
+    <section class="section" id="about">
       <div class="sectionTitle">
         <img src="/src/img/titles.png" alt="Title"
         class="section__title">
@@ -80,12 +81,12 @@
       </div>
     </section>
 
-    <article class="article">
+    <article class="article" id="gallery">
       <div class="titleGalery">
         <img src="/src/img/Title Gallery.png" alt="Title Gallery"
          class="article__titleGalery">
       </div>
-      <div class="article__photos">
+      <div class="article__photos" id="more-exhibitions">
         <img src="/src/img/acticlePhoto.png" alt="acticlePhoto"
         class="article__photo">
       </div>
@@ -97,7 +98,7 @@
         <img src="/src/img/articlePhotoThree.png" alt="acticlePhotoThree"
          class="article__photo">
       </div>
-      <button class="article__button">View all exhibitions</button>
+      <a href="#more-exhibitions" class="article__button">View all exhibitions</a>
     </article>
 
     <div class="article__photos">
@@ -120,7 +121,7 @@
       </div>
     </article>
 
-    <section class="contact">
+    <section class="contact" id="contacts">
       <div class="contact__photo">
         <img src="/src/img/Contact.png" alt="contactPhoto"
          class="contact__photo">
@@ -131,19 +132,23 @@
         class="group__photo-contact">
         <img src="src/img/2 contacts group.png" alt="contactTwoPhoto"
          class="second__photo-contact">
-        <form class="contact__form" onsubmit="return false">
+        <form class="contact__form" id="contactForm"
+       onsubmit="return false">
           <input type="text" placeholder="Name"
-           class="contact__input">
+          name="name" class="contact__input"
+          required>
           <input type="email" placeholder="Email"
-           class="contact__input">
-          <textarea placeholder="Message" class="contact__textarea"></textarea>
+          name="email" class="contact__input"
+          required>
+          <textarea name="message" placeholder="Message"
+          class="contact__textarea" required></textarea>
           <button type="submit" class="contact__submit">Send</button>
         </form>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="footer__photo">
+      <div class="footer__content">
         <img src="src/img/Group 31.png" alt="Group31"
          class="footer__photo">
       </div>
