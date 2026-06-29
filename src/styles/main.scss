@@ -204,6 +204,15 @@ body:has(.menu-toggle:checked) {
     text-decoration: none;
     border: 0;
     margin: 10px 33%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+
+    &:hover {
+    background-color: transparent;
+    color: var(--color-red);
+    outline: 2px solid var(--color-red);
+  }
+
   }
   &__photo-title {
     width: 324px;
@@ -350,6 +359,9 @@ body:has(.menu-toggle:checked) {
   flex-direction: column;
   align-items: center;
   padding: 80px 5%;
+  background-color: var(--color-white);
+  position: relative;
+  z-index: 1;
   gap: 32px;
   text-align: center;
   &__title {
@@ -484,6 +496,8 @@ body:has(.menu-toggle:checked) {
 }
 
 .footer__photo {
+  position: relative;
+  z-index: 0;
   width: 100%;
   height: 359px;
 }
